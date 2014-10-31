@@ -1,0 +1,66 @@
+*** ns-2.1b7a/Makefile.in	Sun Feb 25 05:20:17 2001
+--- ns-2.1b7a/Makefile.in.mod	Sun Feb 25 05:24:16 2001
+***************
+*** 97,100 ****
+--- 97,102 ----
+  
+  OBJ_CC = \
++ 	baseband.o bt-classify.o bt-drr.o bt-host.o \
++ 	bt-lc.o l2cap.o lbf.o lmp.o \
+  	random.o rng.o ranvar.o misc.o timer-handler.o \
+  	scheduler.o object.o \
+***************
+*** 131,137 ****
+  	$(LIB_DIR)int.Vec.o $(LIB_DIR)int.RVec.o \
+  	$(LIB_DIR)dmalloc_support.o \
+- 	webcache/http.o webcache/tcp-simple.o webcache/pagepool.o \
+- 	webcache/inval-agent.o webcache/tcpapp.o webcache/http-aux.o \
+- 	webcache/mcache.o webcache/webtraf.o \
+  	realaudio/realaudio.o \
+  	lanRouter.o filter.o pkt-counter.o \
+--- 133,136 ----
+***************
+*** 252,255 ****
+--- 251,255 ----
+  	tcl/lib/ns-link.tcl \
+  	tcl/lib/ns-mobilenode.tcl \
++ 	tcl/lib/ns-btnode.tcl \
+  	tcl/lib/ns-sat.tcl \
+  	tcl/lib/ns-cmutrace.tcl \
+***************
+*** 300,308 ****
+  	tcl/lan/ns-ll.tcl \
+  	tcl/lan/ns-mac.tcl \
+- 	tcl/webcache/http-agent.tcl \
+- 	tcl/webcache/http-server.tcl \
+- 	tcl/webcache/http-cache.tcl \
+- 	tcl/webcache/http-mcache.tcl \
+- 	tcl/webcache/webtraf.tcl \
+  	tcl/plm/plm.tcl \
+  	tcl/plm/plm-ns.tcl \
+--- 300,303 ----
+***************
+*** 346,367 ****
+  	$(RM) $(CLEANFILES) Makefile config.cache config.log config.status \
+  	    gnuc.h os-proto.h $(AUTOCONF_GEN)
+- 
+- tags:	force
+- 	ctags -wtd *.cc *.h webcache/*.cc webcache/*.h dsdv/*.cc dsdv/*.h \
+- 	dsr/*.cc dsr/*.h webcache/*.cc webcache/*.h lib/*.cc lib/*.h \
+- 	../Tcl/*.cc ../Tcl/*.h 
+- 
+- TAGS:	force
+- 	etags *.cc *.h webcache/*.cc webcache/*.h dsdv/*.cc dsdv/*.h \
+- 	dsr/*.cc dsr/*.h webcache/*.cc webcache/*.h lib/*.cc lib/*.h \
+- 	../Tcl/*.cc ../Tcl/*.h
+- 
+- tcl/lib/TAGS:	force
+- 	( \
+- 		cd tcl/lib; \
+- 		$(TCLSH) ../../bin/tcl-expand.tcl ns-lib.tcl | grep '^### tcl-expand.tcl: begin' | awk '{print $$5}' >.tcl_files; \
+- 		etags --lang=none -r '/^[ \t]*proc[ \t]+\([^ \t]+\)/\1/' `cat .tcl_files`; \
+- 		etags --append --lang=none -r '/^\([A-Z][^ \t]+\)[ \t]+\(instproc\|proc\)[ \t]+\([^ \t]+\)[ \t]+/\1::\3/' `cat .tcl_files`; \
+- 	)
+  
+  depend: $(SRC)
+--- 341,344 ----

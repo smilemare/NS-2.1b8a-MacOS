@@ -1,0 +1,51 @@
+TitleText: -
+Device: Postscript
+BoundBox: true
+Ticks: true
+Markers: true
+XUnitText: time
+YUnitText: packets
+
+"packets
+move 0.158986 0
+draw 0.158986 0
+move 0.772171 1
+draw 0.772171 1
+move 1.462356 2
+draw 1.462356 2
+move 1.544641 3
+draw 1.544641 3
+move 2.134826 4
+draw 2.134826 4
+move 2.217112 5
+draw 2.217112 5
+move 2.299398 6
+draw 2.299398 6
+move 2.807297 7
+draw 2.807297 7
+move 2.889583 8
+draw 2.889583 8
+move 2.971869 9
+draw 2.971869 9
+
+"skip-1
+0 1
+
+"acks
+move 0.373595 0
+draw 0.373595 0
+move 1.06378 1
+draw 1.06378 1
+move 1.736251 3
+draw 1.736251 3
+move 2.408722 5
+draw 2.408722 5
+move 2.591008 6
+draw 2.591008 6
+move 3.081193 8
+draw 3.081193 8
+move 3.263478 9
+draw 3.263478 9
+
+"drops
+

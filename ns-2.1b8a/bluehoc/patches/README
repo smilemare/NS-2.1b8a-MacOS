@@ -1,0 +1,10 @@
+This directory contains BLUEHOC patches for ns-2.1b7a
+
+Patch for filename ABCD.XY is in patch_ABCD_XY
+The modified files are in the dir ../mod/
+
+bt_patch contains patches for all the files of ns-2.1b7a
+which have been modified except Makefile.in. 
+
+bt_patch_make contains patch for Makefile.in as well. 
+

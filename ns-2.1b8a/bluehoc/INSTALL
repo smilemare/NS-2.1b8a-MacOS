@@ -1,0 +1,94 @@
+REQUIREMENTS
+============
+
+BLUEHOC2.0 is an extension of ns-2.1b7a. The supported
+platforms are Linux, SunOS, BSD and almost any other 
+Unix version. 
+
+INSTALLATION
+============
+STEP 1)
+	If you don't already have NS (ns-2.1b7a), download it from 
+	(www.isi.edu/nsnam). Use tar -zxvf to inflate it. Let the 
+        path of the directory in which NS is inflated be NS_HOME. 
+
+STEP 2) 
+	% mv bluehoc2.0-src.tar.gz NS_HOME/ns-allinone-2.1b7a/ns-2.1b7a
+	% cd NS_HOME/ns-allinone-2.1b7a/ns-2.1b7a
+	Unzip and Untar bluehoc2.0-src.tar.gz using:
+	% tar -zxvf bluehoc2.0-src.tar.gz
+
+	The untarred version will have the following directory 
+	structure:
+
+			  bluehoc/
+			     |
+	|------|------|------|---------|-------|--------|------|
+     INSTALL LICENSE README examples/ mod/  patches/  src/   tcl/
+
+
+	The next step is to copy the BLUEHOC C++ and TCL files 
+	in the right directories. 
+
+	Copy the C++ source files to the current directory by
+	% cp bluehoc/src/*.cc bluehoc/src/*.h .
+
+	Also copy the TCL source file to the directory tcl/lib
+	% cp bluehoc/tcl/ns-btnode.tcl tcl/lib/
+
+STEP 3) 
+	The next step is to apply patches to some files in
+	the NS distribution which have been modified for BLUEHOC. 
+
+	IF YOU ALREADY HAVE NS INSTALLED do the following 
+	% cp bluehoc/patches/bt_patch ../
+	% cd ..
+	% patch -p0 -b < bt_patch
+
+	IF YOU DO NOT HAVE NS INSTALLED do the following
+	% cp bluehoc/patches/bt_patch_make ../
+	% cd ..
+	% patch -p0 -b < bt_patch_make
+
+STEP 4) 
+	IF YOU ALREADY HAVE NS INSTALLED 
+	% cd ns-2.1b7a
+	Note: 	In this case you need to manually add the 
+		BLUEHOC C++ files for compilation in OBJ_CC 
+		and ns-btnode.tcl in the NS_TCL_LIB macros
+		of the Makefile.  
+		After this, do
+	% make
+
+	IF YOU DO NOT HAVE NS INSTALLED
+	Just do:
+	% ./install
+	and after NS (with Bluetooth extension) is installed successfully:
+	% cd ns-2.1b7a
+
+RUNNING THE SIMULATION
+======================
+Before doing the following make sure that 'xgraph' and 'nam' are 
+in your PATH shell variable. These two programs are installed at
+the following locations:
+
+xgraph: 	NS_HOME/ns-allinone-2.1b7a/xgraph-12.1/
+nam:		NS_HOME/ns-allinone-2.1b7a/nam-1.0a9/
+
+	% mkdir run
+	% cp bluehoc/tcl/*.tcl bluehoc/examples/*.tcl run/
+	% cd run
+
+	You can test-run the example files simXYZ.tcl by:
+	% ../ns simXYZ.tcl 
+
+	Now the command
+	% wish bluehoc.tcl
+
+	will start a graphical interface which will help 
+	you through in configuring BLUEHOC
+
+Please report any installation problems on the BLUEHOC project page.
+(oss.software.ibm.com/developerworks/projects/bluehoc)
+and for further instructions on how to use see the BlueHoc manual at:
+(oss.software.ibm.com/developerworks/opensource/bluehoc)

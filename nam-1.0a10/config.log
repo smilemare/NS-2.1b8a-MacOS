@@ -1,0 +1,151 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:563: checking how to run the C preprocessor
+configure:643: checking for ANSI C header files
+configure:862: checking host system type
+configure:883: checking target system type
+configure:901: checking build system type
+configure:927: checking for gcc
+configure:1040: checking whether the C compiler (gcc  -framework CoreFoundation) works
+configure:1056: gcc -o conftest   -framework CoreFoundation conftest.c  1>&5
+configure:1053:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main(){return(0);}
+^~~~
+1 warning generated.
+configure:1082: checking whether the C compiler (gcc  -framework CoreFoundation) is a cross-compiler
+configure:1087: checking whether we are using GNU C
+configure:1115: checking whether gcc accepts -g
+configure:1151: checking for c++
+configure:1183: checking whether the C++ compiler (c++  -framework CoreFoundation) works
+configure:1199: c++ -o conftest   -framework CoreFoundation conftest.C  1>&5
+configure:1225: checking whether the C++ compiler (c++  -framework CoreFoundation) is a cross-compiler
+configure:1230: checking whether we are using GNU C++
+configure:1258: checking whether c++ accepts -g
+configure:1290: checking for ANSI C header files
+configure:1397: checking for string.h
+configure:1444: checking for main in -lXbsd
+configure:1480: checking for socket in -lsocket
+configure:1520: checking for gethostbyname in -lnsl
+configure:1560: checking for dcgettext in -lintl
+configure:1600: checking for getnodebyname in -ldnet_stub
+configure:1683: checking that c++ can handle -O2
+configure:1700: gcc -c -g -O2  conftest.c 1>&5
+configure:1690:3: error: use of undeclared identifier 'error'
+                error
+                ^
+1 error generated.
+configure: failed program was:
+#line 1685 "configure"
+#include "confdefs.h"
+
+int main() {
+#if __GNUC__ < 2  || __GNUC_MINOR__ < 8
+		/* gcc */
+		error
+		#endif
+		#if __GNUC_MINOR__ < 92
+		/* egcs */
+		int error;
+		#endif
+	    
+; return 0; }
+configure:1782: checking standard STL is available
+configure:1803: c++ -c -g -O2  conftest.C 1>&5
+configure:1795:43: error: no template named 'list'; did you mean 'tlist'?
+        template <class _T> class tlist : public list <_T> {};
+                                                 ^~~~
+                                                 tlist
+configure:1795:28: note: 'tlist' declared here
+        template <class _T> class tlist : public list <_T> {};
+                                  ^
+configure:1795:43: error: circular inheritance between 'tlist<_T>' and 'tlist<_T>'
+        template <class _T> class tlist : public list <_T> {};
+                                                 ^
+2 errors generated.
+configure: failed program was:
+#line 1793 "configure"
+#include "confdefs.h"
+#include <list>
+	template <class _T> class tlist : public list <_T> {};
+	
+int main() {
+return 0;
+	
+; return 0; }
+configure:2013: checking for zlib.h
+configure:2062: checking for libz1.1.3
+configure:2196: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:2192:10: fatal error: 'X11/Intrinsic.h' file not found
+#include <X11/Intrinsic.h>
+         ^
+1 error generated.
+configure: failed program was:
+#line 2191 "configure"
+#include "confdefs.h"
+#include <X11/Intrinsic.h>
+configure:2230: checking for XOpenDisplay in -lX11
+configure:2534: checking for tcl.h
+configure:2583: checking for libtcl8.3
+configure:2648: checking for init.tcl
+configure:2699: checking for tclsh8.3.2
+configure:2936: checking for tk.h
+configure:2985: checking for libtk8.3
+configure:3050: checking for tk.tcl
+configure:3166: checking for libtcldbg
+configure:3327: checking for otcl.h
+configure:3376: checking for libotcl1.0a7
+configure:3544: checking for tclcl.h
+configure:3593: checking for libtclcl
+configure:3658: checking for tcl2c++
+configure:3729: checking return type of random
+configure:3748: gcc -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:3744:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main() { exit(0); }
+^~~~
+1 warning generated.
+configure:3772: checking for int8_t
+configure:3805: checking for int16_t
+configure:3838: checking for int32_t
+configure:3871: checking for u_int8_t
+configure:3904: checking for u_int16_t
+configure:3937: checking for u_int32_t
+configure:3974: checking for strtoq
+configure:3974: checking for strtoll
+configure:4032: checking size of long
+configure:4074: checking for strtol
+configure:4124: checking for __int64_t
+configure:4139: gcc -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:4135:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main() { __int64_t x; exit (sizeof(x) >= 8 ? 0 : 1); }
+^~~~
+configure:4135:10: error: unknown type name '__int64_t'; did you mean '__int128_t'?
+main() { __int64_t x; exit (sizeof(x) >= 8 ? 0 : 1); }
+         ^~~~~~~~~
+         __int128_t
+note: '__int128_t' declared here
+configure:4135:23: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+main() { __int64_t x; exit (sizeof(x) >= 8 ? 0 : 1); }
+                      ^
+configure:4135:23: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+2 warnings and 1 error generated.
+configure: failed program was:
+#line 4133 "configure"
+#include "confdefs.h"
+
+main() { __int64_t x; exit (sizeof(x) >= 8 ? 0 : 1); }
+
+configure:4159: checking for long long
+configure:4174: gcc -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:4170:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main() { long long x; exit (sizeof(x) >= 8 ? 0 : 1); }
+^~~~
+configure:4170:23: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+main() { long long x; exit (sizeof(x) >= 8 ? 0 : 1); }
+                      ^
+configure:4170:23: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+2 warnings generated.
+configure:4196: checking for int64_t
+configure:4230: checking which kind of 64-bit int to use
+configure:4258: checking for snprintf
+configure:4550: checking for a BSD compatible install

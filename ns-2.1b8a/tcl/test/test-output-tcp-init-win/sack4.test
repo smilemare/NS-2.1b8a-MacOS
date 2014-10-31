@@ -1,0 +1,31 @@
+TitleText: sack4(fast_retransmit)
+Device: Postscript
+BoundBox: true
+Ticks: true
+NoLines: true
+Markers: true
+XUnitText: time
+YUnitText: packets
+
+"packets
+
+"events
+
+"event_timeout
+
+"event_slowstart
+
+"event_fastretx
+
+"event_renofastretx
+
+"event_fastrecovery
+
+"skip-1
+0 1
+
+"skip-2
+0 1
+
+"drops
+

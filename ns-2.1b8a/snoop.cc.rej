@@ -1,0 +1,39 @@
+***************
+*** 563,579 ****
+  {
+  	Scheduler &s = Scheduler::instance();
+  	double sndTime = -1;
+! 
+  	if (toutPending_)
+  		s.cancel(toutPending_);
+  	toutPending_ = 0;
+  	if (empty_())
+  		return sndTime;
+  	int i = buftail_;
+  	do {
+  		hdr_snoop *sh = hdr_snoop::access(pkts_[i]);
+  		int seq = hdr_tcp::access(pkts_[i])->seqno();
+! 
+  		if (seq <= ack) {
+  			sndTime = sh->sndTime();
+  			Packet::free(pkts_[i]);
+--- 617,635 ----
+  {
+  	Scheduler &s = Scheduler::instance();
+  	double sndTime = -1;
+! 	
+  	if (toutPending_)
+  		s.cancel(toutPending_);
+  	toutPending_ = 0;
++ 
+  	if (empty_())
+  		return sndTime;
++ 
+  	int i = buftail_;
+  	do {
+  		hdr_snoop *sh = hdr_snoop::access(pkts_[i]);
+  		int seq = hdr_tcp::access(pkts_[i])->seqno();
+! 		
+  		if (seq <= ack) {
+  			sndTime = sh->sndTime();
+  			Packet::free(pkts_[i]);

@@ -1,0 +1,40 @@
+BLUEHOC is a Bluetooth*(TM) extension to Network simulator (ns-2.1b7a)
+(www.isi.edu/nsnam/ns)
+
+BLUEHOC requires ns-2.1b7a 
+
+It simulates the basic features of the 
+following Bluetooth layers:
+(1) Baseband
+(2) Link Manager Protocol.(LMP) 
+(3) Logical link adaptation and control protcol.(L2CAP) 
+
+This release is bluehoc2.0
+
+BLUEHOC is available under IBM Public License (IPL) from 
+IBM developerWorks (oss.software.ibm.com/developerworks/projects/bluehoc). 
+
+Please see the presentation and BlueHoc manual on the site: 
+(oss.software.ibm.com/developerworks/opensource/bluehoc)
+to know more about the Bluetooth functionalities implemented 
+in BLUEHOC. 
+
+
+
+
+
+
+
+- APURVA KUMAR (kapurva@in.ibm.com)
+
+
+
+*Trademark owned by Telefonaktiebolaget L M Ericsson, Sweden
+
+
+
+
+
+
+
+

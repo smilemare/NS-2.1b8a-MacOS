@@ -1,0 +1,128 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:665: checking host system type
+configure:686: checking target system type
+configure:704: checking build system type
+configure:730: checking for gcc
+configure:843: checking whether the C compiler (gcc  -framework CoreFoundation) works
+configure:859: gcc -o conftest   -framework CoreFoundation conftest.c  1>&5
+configure:856:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main(){return(0);}
+^~~~
+1 warning generated.
+configure:885: checking whether the C compiler (gcc  -framework CoreFoundation) is a cross-compiler
+configure:890: checking whether we are using GNU C
+configure:918: checking whether gcc accepts -g
+configure:954: checking for c++
+configure:986: checking whether the C++ compiler (c++  -framework CoreFoundation) works
+configure:1002: c++ -o conftest   -framework CoreFoundation conftest.C  1>&5
+configure:1028: checking whether the C++ compiler (c++  -framework CoreFoundation) is a cross-compiler
+configure:1033: checking whether we are using GNU C++
+configure:1061: checking whether c++ accepts -g
+configure:1093: checking how to run the C preprocessor
+configure:1173: checking for ANSI C header files
+configure:1280: checking for string.h
+configure:1327: checking for main in -lXbsd
+configure:1363: checking for socket in -lsocket
+configure:1403: checking for gethostbyname in -lnsl
+configure:1443: checking for dcgettext in -lintl
+configure:1483: checking for getnodebyname in -ldnet_stub
+configure:1566: checking that c++ can handle -O2
+configure:1583: gcc -c -g -O2  conftest.c 1>&5
+configure:1573:3: error: use of undeclared identifier 'error'
+                error
+                ^
+1 error generated.
+configure: failed program was:
+#line 1568 "configure"
+#include "confdefs.h"
+
+int main() {
+#if __GNUC__ < 2  || __GNUC_MINOR__ < 8
+		/* gcc */
+		error
+		#endif
+		#if __GNUC_MINOR__ < 92
+		/* egcs */
+		int error;
+		#endif
+	    
+; return 0; }
+configure:1665: checking standard STL is available
+configure:1687: c++ -c -g -O2  conftest.C 1>&5
+configure:1678:11: fatal error: 'hash_map' file not found
+        #include <hash_map>
+                 ^
+1 error generated.
+configure: failed program was:
+#line 1676 "configure"
+#include "confdefs.h"
+#include <list>
+	#include <hash_map>
+	template <class _T> class tlist : public list <_T> {};
+	
+int main() {
+return 0;
+	
+; return 0; }
+configure:1747: checking for ranlib
+configure:1779: checking for snprintf
+configure:1832: checking for ANSI C header files
+configure:1940: checking for strtoq
+configure:1940: checking for strtoll
+configure:1998: checking size of long
+configure:2040: checking for strtol
+configure:2090: checking for __int64_t
+configure:2105: gcc -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:2101:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main() { __int64_t x; exit (sizeof(x) >= 8 ? 0 : 1); }
+^~~~
+configure:2101:10: error: unknown type name '__int64_t'; did you mean '__int128_t'?
+main() { __int64_t x; exit (sizeof(x) >= 8 ? 0 : 1); }
+         ^~~~~~~~~
+         __int128_t
+note: '__int128_t' declared here
+configure:2101:23: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+main() { __int64_t x; exit (sizeof(x) >= 8 ? 0 : 1); }
+                      ^
+configure:2101:23: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+2 warnings and 1 error generated.
+configure: failed program was:
+#line 2099 "configure"
+#include "confdefs.h"
+
+main() { __int64_t x; exit (sizeof(x) >= 8 ? 0 : 1); }
+
+configure:2125: checking for long long
+configure:2140: gcc -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:2136:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main() { long long x; exit (sizeof(x) >= 8 ? 0 : 1); }
+^~~~
+configure:2136:23: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+main() { long long x; exit (sizeof(x) >= 8 ? 0 : 1); }
+                      ^
+configure:2136:23: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+2 warnings generated.
+configure:2162: checking for int64_t
+configure:2196: checking which kind of 64-bit int to use
+configure:2403: checking for tcl.h
+configure:2452: checking for libtcl8.3
+configure:2517: checking for init.tcl
+configure:2568: checking for tclsh8.3.2
+configure:2805: checking for tk.h
+configure:2854: checking for libtk8.3
+configure:2919: checking for tk.tcl
+configure:3041: checking for otcl.h
+configure:3090: checking for libotcl1.0a7
+configure:3219: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:3215:10: fatal error: 'X11/Intrinsic.h' file not found
+#include <X11/Intrinsic.h>
+         ^
+1 error generated.
+configure: failed program was:
+#line 3214 "configure"
+#include "confdefs.h"
+#include <X11/Intrinsic.h>
+configure:3253: checking for XOpenDisplay in -lX11
+configure:3724: checking for a BSD compatible install

@@ -1,0 +1,314 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:566: checking for ranlib
+configure:607: checking for gcc
+configure:720: checking whether the C compiler (gcc  -framework CoreFoundation) works
+configure:736: gcc -o conftest   -framework CoreFoundation conftest.c  1>&5
+configure:733:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main(){return(0);}
+^~~~
+1 warning generated.
+configure:762: checking whether the C compiler (gcc  -framework CoreFoundation) is a cross-compiler
+configure:767: checking whether we are using GNU C
+configure:776: gcc -E conftest.c
+configure:795: checking whether gcc accepts -g
+configure:831: checking how to run the C preprocessor
+configure:852: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:914: checking for unistd.h
+configure:924: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:914: checking for limits.h
+configure:924: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:957: checking for building with threads
+configure:1241: checking if the compiler understands -pipe
+configure:1252: gcc -pipe -c -g -O2  conftest.c 1>&5
+configure:1275: checking for getcwd
+configure:1303: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:1337: checking for opendir
+configure:1365: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:1337: checking for strstr
+configure:1365: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:1349:6: warning: incompatible redeclaration of library function 'strstr' [-Wincompatible-library-redeclaration]
+char strstr();
+     ^
+configure:1349:6: note: 'strstr' is a builtin with type 'char *(const char *, const char *)'
+1 warning generated.
+configure:1395: checking for strtol
+configure:1423: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:1395: checking for tmpnam
+configure:1423: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:1395: checking for waitpid
+configure:1423: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:1450: checking for strerror
+configure:1478: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:1462:6: warning: incompatible redeclaration of library function 'strerror' [-Wincompatible-library-redeclaration]
+char strerror();
+     ^
+configure:1462:6: note: 'strerror' is a builtin with type 'char *(int)'
+1 warning generated.
+configure:1502: checking for getwd
+configure:1530: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:1554: checking for wait3
+configure:1582: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:1606: checking for uname
+configure:1634: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:1658: checking for realpath
+configure:1686: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:1747: checking dirent.h
+configure:1775: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:1796: checking for errno.h
+configure:1806: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1833: checking for float.h
+configure:1843: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1870: checking for values.h
+configure:1880: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1876:10: fatal error: 'values.h' file not found
+#include <values.h>
+         ^
+1 error generated.
+configure: failed program was:
+#line 1875 "configure"
+#include "confdefs.h"
+#include <values.h>
+configure:1907: checking for limits.h
+configure:1944: checking for stdlib.h
+configure:1954: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2026: checking for string.h
+configure:2036: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2099: checking for sys/wait.h
+configure:2109: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2136: checking for dlfcn.h
+configure:2146: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2178: checking for unistd.h
+configure:2178: checking for sys/param.h
+configure:2188: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2225: checking termios vs. termio vs. sgtty
+configure:2247: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:2235:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^~~~
+1 warning generated.
+configure:2358: checking fd_set and sys/select
+configure:2367: gcc -pipe -c -g -O2  conftest.c 1>&5
+configure:2410: checking whether struct tm is in sys/time.h or time.h
+configure:2423: gcc -pipe -c -g -O2  conftest.c 1>&5
+configure:2419:20: warning: expression result unused [-Wunused-value]
+struct tm *tp; tp->tm_sec;
+               ~~  ^~~~~~
+1 warning generated.
+configure:2448: checking for sys/time.h
+configure:2458: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2485: checking whether time.h and sys/time.h may both be included
+configure:2499: gcc -pipe -c -g -O2  conftest.c 1>&5
+configure:2520: checking for tm_zone in struct tm
+configure:2533: gcc -pipe -c -g -O2  conftest.c 1>&5
+configure:2529:18: warning: expression result unused [-Wunused-value]
+struct tm tm; tm.tm_zone;
+              ~~ ^~~~~~~
+1 warning generated.
+configure:2591: checking tm_tzadj in struct tm
+configure:2600: gcc -pipe -c -g -O2  conftest.c 1>&5
+configure:2596:18: error: no member named 'tm_tzadj' in 'struct tm'
+struct tm tm; tm.tm_tzadj;
+              ~~ ^
+1 error generated.
+configure: failed program was:
+#line 2593 "configure"
+#include "confdefs.h"
+#include <time.h>
+int main() {
+struct tm tm; tm.tm_tzadj;
+; return 0; }
+configure:2616: checking tm_gmtoff in struct tm
+configure:2625: gcc -pipe -c -g -O2  conftest.c 1>&5
+configure:2621:18: warning: expression result unused [-Wunused-value]
+struct tm tm; tm.tm_gmtoff;
+              ~~ ^~~~~~~~~
+1 warning generated.
+configure:2646: checking long timezone variable
+configure:2657: gcc -pipe -c -g -O2  conftest.c 1>&5
+configure:2653:6: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+            exit (0);
+            ^
+configure:2653:6: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+1 warning generated.
+configure:2767: checking for st_blksize in struct stat
+configure:2780: gcc -pipe -c -g -O2  conftest.c 1>&5
+configure:2776:18: warning: expression result unused [-Wunused-value]
+struct stat s; s.st_blksize;
+               ~ ^~~~~~~~~~
+1 warning generated.
+configure:2801: checking for fstatfs
+configure:2829: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:2858: checking for 8-bit clean memcmp
+configure:2876: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:2868:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^~~~
+configure:2871:3: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+  exit(memcmp(&c0, &c2, 1) < 0 && memcmp(&c1, &c2, 1) < 0 ? 0 : 1);
+  ^
+configure:2871:3: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+configure:2871:8: warning: implicitly declaring library function 'memcmp' with type 'int (const void *, const void *, unsigned long)'
+  exit(memcmp(&c0, &c2, 1) < 0 && memcmp(&c1, &c2, 1) < 0 ? 0 : 1);
+       ^
+configure:2871:8: note: please include the header <string.h> or explicitly provide a declaration for 'memcmp'
+3 warnings generated.
+configure:2900: checking for memmove
+configure:2928: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:2912:6: warning: incompatible redeclaration of library function 'memmove' [-Wincompatible-library-redeclaration]
+char memmove();
+     ^
+configure:2912:6: note: 'memmove' is a builtin with type 'void *(void *, const void *, unsigned long)'
+1 warning generated.
+configure:2961: checking proper strstr implementation
+configure:2976: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:2968:12: warning: incompatible redeclaration of library function 'strstr' [-Wincompatible-library-redeclaration]
+extern int strstr();
+           ^
+configure:2968:12: note: 'strstr' is a builtin with type 'char *(const char *, const char *)'
+configure:2971:5: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+    exit(strstr("\0test", "test") ? 1 : 0);
+    ^
+configure:2971:5: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+2 warnings generated.
+configure:3002: checking for strtoul
+configure:3030: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:3070: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:3064:9: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+        exit(1);
+        ^
+configure:3064:9: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+1 warning generated.
+configure:3093: checking for strtod
+configure:3121: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:3161: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:3155:2: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+        exit(1);
+        ^
+configure:3155:2: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+1 warning generated.
+configure:3187: checking for strtod
+configure:3237: checking for Solaris2.4/Tru64 strtod bugs
+configure:3262: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:3252:7: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+                    exit(1);
+                    ^
+configure:3252:7: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+1 warning generated.
+configure:3293: checking for ANSI C header files
+configure:3306: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:3373: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:3368:67: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+if (XOR (islower (i), ISLOWER (i)) || toupper (i) != TOUPPER (i)) exit(2);
+                                                                  ^
+configure:3368:67: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+1 warning generated.
+configure:3397: checking for mode_t
+configure:3430: checking for pid_t
+configure:3463: checking for size_t
+configure:3496: checking for uid_t in sys/types.h
+configure:3538: checking for opendir
+configure:3599: checking union wait
+configure:3613: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:3637: checking matherr support
+configure:3650: gcc -pipe -c -g -O2  conftest.c 1>&5
+configure:3675: checking for strncasecmp
+configure:3703: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:3687:6: warning: incompatible redeclaration of library function 'strncasecmp' [-Wincompatible-library-redeclaration]
+char strncasecmp();
+     ^
+configure:3687:6: note: 'strncasecmp' is a builtin with type 'int (const char *, const char *, unsigned long)'
+1 warning generated.
+configure:3825: checking for BSDgettimeofday
+configure:3853: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+Undefined symbols for architecture x86_64:
+  "_BSDgettimeofday", referenced from:
+      _main in conftest-8a1438.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 3830 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char BSDgettimeofday(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char BSDgettimeofday();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_BSDgettimeofday) || defined (__stub___BSDgettimeofday)
+choke me
+#else
+BSDgettimeofday();
+#endif
+
+; return 0; }
+configure:3874: checking for gettimeofday
+configure:3902: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:3928: checking for gettimeofday declaration
+configure:3966: checking whether char is unsigned
+configure:4029: checking signed char declarations
+configure:4041: gcc -pipe -c -g -O2  conftest.c 1>&5
+configure:4102: checking for sin
+configure:4130: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:4114:6: warning: incompatible redeclaration of library function 'sin' [-Wincompatible-library-redeclaration]
+char sin();
+     ^
+configure:4114:6: note: 'sin' is a builtin with type 'double (double)'
+1 warning generated.
+configure:4151: checking for main in -lieee
+configure:4166: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c -lieee   1>&5
+ld: library not found for -lieee
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 4159 "configure"
+#include "confdefs.h"
+
+int main() {
+main()
+; return 0; }
+configure:4249: checking for main in -linet
+configure:4264: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c -linet   1>&5
+ld: library not found for -linet
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 4257 "configure"
+#include "confdefs.h"
+
+int main() {
+main()
+; return 0; }
+configure:4286: checking for net/errno.h
+configure:4296: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4292:10: fatal error: 'net/errno.h' file not found
+#include <net/errno.h>
+         ^
+1 error generated.
+configure: failed program was:
+#line 4291 "configure"
+#include "confdefs.h"
+#include <net/errno.h>
+configure:4341: checking for connect
+configure:4369: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:4534: checking for gethostbyname
+configure:4562: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:4645: checking if 64bit support is requested
+configure:4665: checking if 64bit Sparc VIS support is requested
+configure:4689: checking system version (for dynamic loading)
+configure:4712: checking if gcc is being used
+configure:4725: checking for dlopen in -ldl
+configure:4744: gcc -pipe -o conftest -g -O2  -framework CoreFoundation conftest.c -ldl   1>&5
+configure:5580: checking for build with symbols
+configure:5617: checking for sys/ioctl.h
+configure:5627: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:5657: checking for sys/filio.h
+configure:5667: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:5694: checking FIONBIO vs. O_NONBLOCK for nonblocking I/O
+configure:5756: checking how to build libraries

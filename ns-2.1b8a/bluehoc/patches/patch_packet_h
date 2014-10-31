@@ -1,0 +1,11 @@
+*** ns-2.1b7a/packet.h	Fri Sep 29 01:49:06 2000
+--- packet.h	Sun Feb 25 04:15:39 2001
+***************
+*** 65,68 ****
+--- 65,70 ----
+  #define HDR_IMEP(p)     (hdr_imep::access(p))
+  #define HDR_DIFF(p)     (hdr_diff::access(p))
++ #define HDR_BT(p)	(hdr_bt::access(p))
++ #define HDR_L2CAP(p)	(hdr_l2cap::access(p))
+   
+  /* --------------------------------------------------------------------*/

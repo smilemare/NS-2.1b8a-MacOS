@@ -1,0 +1,34 @@
+*** ns-2.1b7a/trace.h	Sun Feb 25 22:28:13 2001
+--- ns-2.1b7a/trace.h.mod	Sun Feb 25 22:27:56 2001
+***************
+*** 43,46 ****
+--- 43,48 ----
+  #include "packet.h"
+  #include "connector.h"
++ #include "bt-core.h"
++ #include "globals.h"
+  
+  
+***************
+*** 59,62 ****
+--- 61,66 ----
+  	Tcl_Channel namChan_;
+  	char nwrk_ [256];
++ 	// added for Bluetooth trace
++ 	int btTrace_;
+  
+  public:
+***************
+*** 97,100 ****
+--- 101,111 ----
+  };
+  
++ class BTNodeTrace : public Trace {
++ public:
++ 	BTNodeTrace() : Trace(0) {}
++ 	~BTNodeTrace();
++ 	void recv(Packet* p, Handler* h);
++ 	void changeNodeColor(state_type, state_type);
++ };
+  
+  #endif

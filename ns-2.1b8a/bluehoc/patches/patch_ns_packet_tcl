@@ -1,0 +1,19 @@
+*** ns-2.1b7a/tcl/lib/ns-packet.tcl	Fri Sep  1 08:34:11 2000
+--- ns-packet.tcl	Sun Feb 25 04:15:39 2001
+***************
+*** 114,118 ****
+  	Encap
+  	Flags
+- 	HttpInval
+  	IMEP
+  	IP
+--- 114,117 ----
+***************
+*** 143,146 ****
+--- 142,147 ----
+  	TORA
+  	UMP 
++ 	BT
++ 	L2CAP
+  } {
+  	add-packet-header $prot

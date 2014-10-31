@@ -1,0 +1,26 @@
+Example Bluetooth simulations 
+=============================
+
+The naming convention for the files is:
+
+simXYZ.tcl
+
+where
+X = no. of FTP apps. 
+Y = no. of Telnet apps. 
+Z = no. of Voice sources.
+
+The output file for nam traces is 'out.nam'. 
+The size of nam files generated varies from 
+around 2-30 MB, depending upon the following 
+factors:
+
+(1) No of devices (broadcasted packets during inquiry/paging are 
+     transmitted on all links). 
+(2) Time spent in inquiry and paging. This determines how many 
+     packets are braodcasted. The maximum duration for inquiry 
+     period is Inquiry Timeout. 
+(3) Type of application: FTP always has data to send while telnet 
+     and voice transmissions are intermittent. 
+(4) Simulation time (20 sec for all examples). 
+

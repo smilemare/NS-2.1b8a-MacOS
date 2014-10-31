@@ -1,0 +1,11 @@
+*** ns-2.1b7a/tcl/lib/ns-default.tcl	Thu Oct 12 00:49:34 2000
+--- ns-default.tcl	Sun Feb 25 04:15:39 2001
+***************
+*** 708,713 ****
+  Agent/CBR set dport_            0
+  
+- # Http invalidation agent
+- Agent/HttpInval set inval_hdr_size_ 40
+  
+  Agent/RTP set seqno_ 0
+--- 708,711 ----

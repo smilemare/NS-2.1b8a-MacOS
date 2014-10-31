@@ -1,0 +1,19 @@
+TitleText: timersA1_(multiple_of_8_instead_of_4)
+Device: Postscript
+BoundBox: true
+Ticks: true
+NoLines: true
+Markers: true
+XUnitText: time
+YUnitText: packets
+
+"packets
+
+"skip-1
+0 1
+
+"skip-2
+0 1
+
+"drops
+

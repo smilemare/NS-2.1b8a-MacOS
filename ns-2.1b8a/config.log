@@ -1,0 +1,221 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:681: checking host system type
+configure:702: checking target system type
+configure:720: checking build system type
+configure:746: checking for gcc
+configure:859: checking whether the C compiler (gcc  -framework CoreFoundation) works
+configure:875: gcc -o conftest   -framework CoreFoundation conftest.c  1>&5
+configure:872:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main(){return(0);}
+^~~~
+1 warning generated.
+configure:901: checking whether the C compiler (gcc  -framework CoreFoundation) is a cross-compiler
+configure:906: checking whether we are using GNU C
+configure:934: checking whether gcc accepts -g
+configure:970: checking for c++
+configure:1002: checking whether the C++ compiler (c++  -framework CoreFoundation) works
+configure:1018: c++ -o conftest   -framework CoreFoundation conftest.C  1>&5
+configure:1044: checking whether the C++ compiler (c++  -framework CoreFoundation) is a cross-compiler
+configure:1049: checking whether we are using GNU C++
+configure:1077: checking whether c++ accepts -g
+configure:1109: checking how to run the C preprocessor
+configure:1189: checking for ANSI C header files
+configure:1296: checking for string.h
+configure:1343: checking for main in -lXbsd
+configure:1379: checking for socket in -lsocket
+configure:1419: checking for gethostbyname in -lnsl
+configure:1459: checking for dcgettext in -lintl
+configure:1499: checking for getnodebyname in -ldnet_stub
+configure:1582: checking that c++ can handle -O2
+configure:1599: gcc -c -g -O2  conftest.c 1>&5
+configure:1589:3: error: use of undeclared identifier 'error'
+                error
+                ^
+1 error generated.
+configure: failed program was:
+#line 1584 "configure"
+#include "confdefs.h"
+
+int main() {
+#if __GNUC__ < 2  || __GNUC_MINOR__ < 8
+		/* gcc */
+		error
+		#endif
+		#if __GNUC_MINOR__ < 92
+		/* egcs */
+		int error;
+		#endif
+	    
+; return 0; }
+configure:1681: checking standard STL is available
+configure:1703: c++ -c -g -O2  conftest.C 1>&5
+configure:1694:11: fatal error: 'hash_map' file not found
+        #include <hash_map>
+                 ^
+1 error generated.
+configure: failed program was:
+#line 1692 "configure"
+#include "confdefs.h"
+#include <list>
+	#include <hash_map>
+	template <class _T> class tlist : public list <_T> {};
+	
+int main() {
+return 0;
+	
+; return 0; }
+configure:1939: checking for tcl.h
+configure:1988: checking for libtcl8.3
+configure:2053: checking for init.tcl
+configure:2104: checking for tclsh8.3.2
+configure:2341: checking for tk.h
+configure:2390: checking for libtk8.3
+configure:2455: checking for tk.tcl
+configure:2577: checking for otcl.h
+configure:2626: checking for libotcl1.0a7
+configure:2794: checking for tclcl.h
+configure:2843: checking for libtclcl
+configure:2908: checking for tcl2c++
+configure:3126: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:3122:10: fatal error: 'X11/Intrinsic.h' file not found
+#include <X11/Intrinsic.h>
+         ^
+1 error generated.
+configure: failed program was:
+#line 3121 "configure"
+#include "confdefs.h"
+#include <X11/Intrinsic.h>
+configure:3160: checking for XOpenDisplay in -lX11
+configure:3323: checking for libtcldbg
+configure:3462: checking dmalloc
+configure:3710: checking for perl
+/usr/bin/perl -e require 5.002
+configure:3842: checking for ANSI C header files
+configure:3949: checking for bcopy
+configure:3949: checking for bzero
+configure:3949: checking for fesetprecision
+configure:3949: checking for getrusage
+configure:3949: checking for sbrk
+configure:3949: checking for snprintf
+configure:4005: checking for arpa/inet.h
+configure:4005: checking for netinet/in.h
+configure:4005: checking for string.h
+configure:4005: checking for strings.h
+configure:4005: checking for time.h
+configure:4005: checking for unistd.h
+configure:4005: checking for net/ethernet.h
+configure:4043: checking return type of random
+configure:4062: gcc -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:4058:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main() { exit(0); }
+^~~~
+1 warning generated.
+configure:4086: checking for int8_t
+configure:4119: checking for int16_t
+configure:4152: checking for int32_t
+configure:4185: checking for u_int8_t
+configure:4218: checking for u_int16_t
+configure:4251: checking for u_int32_t
+configure:4288: checking for strtoq
+configure:4288: checking for strtoll
+configure:4346: checking size of long
+configure:4388: checking for strtol
+configure:4438: checking for __int64_t
+configure:4453: gcc -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:4449:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main() { __int64_t x; exit (sizeof(x) >= 8 ? 0 : 1); }
+^~~~
+configure:4449:10: error: unknown type name '__int64_t'; did you mean '__int128_t'?
+main() { __int64_t x; exit (sizeof(x) >= 8 ? 0 : 1); }
+         ^~~~~~~~~
+         __int128_t
+note: '__int128_t' declared here
+configure:4449:23: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+main() { __int64_t x; exit (sizeof(x) >= 8 ? 0 : 1); }
+                      ^
+configure:4449:23: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+2 warnings and 1 error generated.
+configure: failed program was:
+#line 4447 "configure"
+#include "confdefs.h"
+
+main() { __int64_t x; exit (sizeof(x) >= 8 ? 0 : 1); }
+
+configure:4473: checking for long long
+configure:4488: gcc -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:4484:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main() { long long x; exit (sizeof(x) >= 8 ? 0 : 1); }
+^~~~
+configure:4484:23: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
+main() { long long x; exit (sizeof(x) >= 8 ? 0 : 1); }
+                      ^
+configure:4484:23: note: please include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+2 warnings generated.
+configure:4510: checking for int64_t
+configure:4544: checking which kind of 64-bit int to use
+configure:4573: checking for struct ether_header
+configure:4592: gcc -c -g -O2  conftest.c 1>&5
+configure:4583:1: error: function definition is not allowed here
+{
+^
+1 error generated.
+configure: failed program was:
+#line 4575 "configure"
+#include "confdefs.h"
+
+#include <stdio.h>
+#include <net/ethernet.h>
+
+int main() {
+
+int main()
+{
+	struct ether_header etherHdr;
+
+	return 1;
+}
+
+; return 0; }
+configure:4613: checking for struct ether_addr
+configure:4632: gcc -c -g -O2  conftest.c 1>&5
+configure:4623:1: error: function definition is not allowed here
+{
+^
+1 error generated.
+configure: failed program was:
+#line 4615 "configure"
+#include "confdefs.h"
+
+#include <stdio.h>
+#include <net/ethernet.h>
+
+int main() {
+
+int main()
+{
+	struct ether_addr etherAddr;
+
+	return 0;
+}
+
+; return 0; }
+configure:4655: checking for addr2ascii
+configure:4724: gcc -o conftest -g -O2  -framework CoreFoundation conftest.c  1>&5
+configure:4718:10: error: use of undeclared identifier 'SIOCGIFHWADDR'
+        int i = SIOCGIFHWADDR;
+                ^
+1 error generated.
+configure: failed program was:
+#line 4713 "configure"
+#include "confdefs.h"
+#include <stdio.h>
+#include <sys/ioctl.h>
+int main()
+{
+	int i = SIOCGIFHWADDR;
+	return 0;
+}
+
+configure:4980: checking for a BSD compatible install

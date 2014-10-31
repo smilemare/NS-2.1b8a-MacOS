@@ -1,0 +1,89 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:664: checking host system type
+configure:685: checking target system type
+configure:703: checking build system type
+configure:729: checking for gcc
+configure:842: checking whether the C compiler (gcc  -framework CoreFoundation) works
+configure:858: gcc -o conftest   -framework CoreFoundation conftest.c  1>&5
+configure:855:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main(){return(0);}
+^~~~
+1 warning generated.
+configure:884: checking whether the C compiler (gcc  -framework CoreFoundation) is a cross-compiler
+configure:889: checking whether we are using GNU C
+configure:917: checking whether gcc accepts -g
+configure:953: checking for c++
+configure:985: checking whether the C++ compiler (c++  -framework CoreFoundation) works
+configure:1001: c++ -o conftest   -framework CoreFoundation conftest.C  1>&5
+configure:1027: checking whether the C++ compiler (c++  -framework CoreFoundation) is a cross-compiler
+configure:1032: checking whether we are using GNU C++
+configure:1060: checking whether c++ accepts -g
+configure:1092: checking how to run the C preprocessor
+configure:1172: checking for ANSI C header files
+configure:1279: checking for string.h
+configure:1326: checking for main in -lXbsd
+configure:1362: checking for socket in -lsocket
+configure:1402: checking for gethostbyname in -lnsl
+configure:1442: checking for dcgettext in -lintl
+configure:1482: checking for getnodebyname in -ldnet_stub
+configure:1565: checking that c++ can handle -O2
+configure:1582: gcc -c -g -O2  conftest.c 1>&5
+configure:1572:3: error: use of undeclared identifier 'error'
+                error
+                ^
+1 error generated.
+configure: failed program was:
+#line 1567 "configure"
+#include "confdefs.h"
+
+int main() {
+#if __GNUC__ < 2  || __GNUC_MINOR__ < 8
+		/* gcc */
+		error
+		#endif
+		#if __GNUC_MINOR__ < 92
+		/* egcs */
+		int error;
+		#endif
+	    
+; return 0; }
+configure:1664: checking standard STL is available
+configure:1686: c++ -c -g -O2  conftest.C 1>&5
+configure:1677:11: fatal error: 'hash_map' file not found
+        #include <hash_map>
+                 ^
+1 error generated.
+configure: failed program was:
+#line 1675 "configure"
+#include "confdefs.h"
+#include <list>
+	#include <hash_map>
+	template <class _T> class tlist : public list <_T> {};
+	
+int main() {
+return 0;
+	
+; return 0; }
+configure:1922: checking for tcl.h
+configure:1971: checking for libtcl8.3
+configure:2036: checking for init.tcl
+configure:2087: checking for tclsh8.3.2
+configure:2324: checking for tk.h
+configure:2373: checking for libtk8.3
+configure:2438: checking for tk.tcl
+configure:2552: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2548:10: fatal error: 'X11/Intrinsic.h' file not found
+#include <X11/Intrinsic.h>
+         ^
+1 error generated.
+configure: failed program was:
+#line 2547 "configure"
+#include "confdefs.h"
+#include <X11/Intrinsic.h>
+configure:2586: checking for XOpenDisplay in -lX11
+configure:2714: checking for ranlib
+configure:2753: checking for a BSD compatible install
+configure:2811: checking system version (for dynamic loading)
+configure:3216: checking for a BSD compatible install

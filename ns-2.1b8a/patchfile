@@ -1,0 +1,8 @@
+64,68d63
+< Scheduler::~Scheduler()
+< {
+<     instance_ = NULL ;
+< }
+< 
+
+

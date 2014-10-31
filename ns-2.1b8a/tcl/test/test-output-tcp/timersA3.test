@@ -1,0 +1,19 @@
+TitleText: timersA3_(weight_1/32_instead_of_1/8)
+Device: Postscript
+BoundBox: true
+Ticks: true
+NoLines: true
+Markers: true
+XUnitText: time
+YUnitText: packets
+
+"packets
+
+"skip-1
+0 1
+
+"skip-2
+0 1
+
+"drops
+

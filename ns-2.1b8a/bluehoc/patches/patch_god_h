@@ -1,0 +1,94 @@
+*** ns-2.1b7a/god.h	Mon Jul 10 12:54:45 2000
+--- god.h	Sun Feb 25 04:15:39 2001
+***************
+*** 77,83 ****
+  // Cut and Paste from setdest.h   -- Chalermek 12/1/99
+  
+! class vector {
+  public:
+! 	vector(double x = 0.0, double y = 0.0, double z = 0.0) {
+  		X = x; Y = y; Z = z;
+  	}
+--- 77,83 ----
+  // Cut and Paste from setdest.h   -- Chalermek 12/1/99
+  
+! class vector_ns {
+  public:
+! 	vector_ns(double x = 0.0, double y = 0.0, double z = 0.0) {
+  		X = x; Y = y; Z = z;
+  	}
+***************
+*** 86,113 ****
+  	}
+  
+! 	inline void vector::operator=(const vector a) {
+  		X = a.X;
+  		Y = a.Y;
+  		Z = a.Z;
+  	}
+! 	inline void vector::operator+=(const vector a) {
+  		X += a.X;
+  		Y += a.Y;
+  		Z += a.Z;
+  	}
+! 	inline int vector::operator==(const vector a) {
+  		return (X == a.X && Y == a.Y && Z == a.Z);
+  	}
+! 	inline int vector::operator!=(const vector a) {
+  		return (X != a.X || Y != a.Y || Z != a.Z);
+  	}
+! 	inline vector operator-(const vector a) {
+! 		return vector(X-a.X, Y-a.Y, Z-a.Z);
+  	}
+! 	friend inline vector operator*(const double a, const vector b) {
+! 		return vector(a*b.X, a*b.Y, a*b.Z);
+  	}
+! 	friend inline vector operator/(const vector a, const double b) {
+! 		return vector(a.X/b, a.Y/b, a.Z/b);
+  	}
+  
+--- 86,113 ----
+  	}
+  
+! 	inline void vector_ns::operator=(const vector_ns a) {
+  		X = a.X;
+  		Y = a.Y;
+  		Z = a.Z;
+  	}
+! 	inline void vector_ns::operator+=(const vector_ns a) {
+  		X += a.X;
+  		Y += a.Y;
+  		Z += a.Z;
+  	}
+! 	inline int vector_ns::operator==(const vector_ns a) {
+  		return (X == a.X && Y == a.Y && Z == a.Z);
+  	}
+! 	inline int vector_ns::operator!=(const vector_ns a) {
+  		return (X != a.X || Y != a.Y || Z != a.Z);
+  	}
+! 	inline vector_ns operator-(const vector_ns a) {
+! 		return vector_ns(X-a.X, Y-a.Y, Z-a.Z);
+  	}
+! 	friend inline vector_ns operator*(const double a, const vector_ns b) {
+! 		return vector_ns(a*b.X, a*b.Y, a*b.Z);
+  	}
+! 	friend inline vector_ns operator/(const vector_ns a, const double b) {
+! 		return vector_ns(a.X/b, a.Y/b, a.Z/b);
+  	}
+  
+***************
+*** 117,120 ****
+--- 117,121 ----
+  };
+  
++ 
+  // ------------------------
+  
+***************
+*** 204,207 ****
+--- 205,209 ----
+                                //   the next hop of i where i wants to send
+                                //	 a packet to j.
++ 
+  };
+  

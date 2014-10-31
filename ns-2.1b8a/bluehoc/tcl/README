@@ -1,0 +1,31 @@
+
+
+This directory contains the following files
+
+1) bluehoc.tcl (Requires 'wish')
+
+   This is a Tcl/TK based Graphical Interface for configuration
+   and running the simulation. 
+
+   The configuration parameters which are set using the GUI 
+   are written into the output tcl file which the user selects. 
+
+   After the configuration is complete and the user saves the 
+   script file, it is automatically run. Actions like plotting
+   graphs, getting nam traces etc are performed if the user
+   selects the options. 
+
+   The script file can also be run using ../ns <script> after 
+   installation from run/ directory. 
+
+
+2) proc.tcl and run.tcl
+
+   The simulation script created in 1) includes these two files. 
+   These files perform the actual configuration given the values
+   for configuration parameters. 
+
+
+3) ns-btnode.tcl defines the class BTNode which represents a 
+   Bluetooth node. 
+

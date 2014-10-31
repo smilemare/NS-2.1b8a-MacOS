@@ -1,0 +1,102 @@
+***************
+*** 442,469 ****
+  		flags[5] = 0;
+  #endif
+! 		
+! 		sprintf(nwrk_, 
+! 			"%c -t "TIME_FORMAT" -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
+! 			'h',
+! 			Scheduler::instance().clock(),
+! 			src_,
+!   			dst_,
+! 			name,
+! 			th->size(),
+! 			iph->flowid(),
+! 			th->uid(),
+! 			iph->flowid(),
+! 			src_nodeaddr,
+! 			src_portaddr,
+! 			dst_nodeaddr,
+! 			dst_portaddr,
+! 			-1, flags, sname);
+! 		namdump();
+! 		delete [] src_nodeaddr;
+! 		delete [] src_portaddr;
+! 		delete [] dst_nodeaddr;
+! 		delete [] dst_portaddr;
+  	}
+- 
+  	/* hack: if trace object not attached to anything free packet */
+  	if (target_ == 0)
+--- 444,514 ----
+  		flags[5] = 0;
+  #endif
+! 		if (!btTrace_) {
+! 			sprintf(nwrk_, 
+! 				"%c -t "TIME_FORMAT" -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
+! 				'h',
+! 				Scheduler::instance().clock(),
+! 				src_,
+! 				dst_,
+! 				name,
+! 				th->size(),
+! 				iph->flowid(),
+! 				th->uid(),
+! 				iph->flowid(),
+! 				src_nodeaddr,
+! 				src_portaddr,
+! 				dst_nodeaddr,
+! 				dst_portaddr,
+! 				-1, flags, sname);
+! 			namdump();
+! 			delete [] src_nodeaddr;
+! 			delete [] src_portaddr;
+! 			delete [] dst_nodeaddr;
+! 			delete [] dst_portaddr;
+! 		}
+! 		else {
+! 			hdr_bt* bt = (struct hdr_bt*)(p)->access(hdr_bt::offset_);
+! 			unsigned char print = 0;
+! 			//string c = PacketColors[bt->type];
+! 			int colorindex = bt->type;
+! 			if (dst_ == 0 && !(bt->dir)) {
+! 				src_ = bt->sendId_;
+! 				print = 1;
+! 				//c = "red";
+! 			}
+! 			else if (dst_ && bt->dir) {
+! 				if (!(bt->am_addr) || bt->recvId_ == dst_) {
+! 					print = 1;
+! 					//c = "green";
+! 				}
+! 			}	
+! 			//const char* color = c.c_str();
+! 			if (print) {
+! 				sprintf(nwrk_, 
+! 					"%c -t "TIME_FORMAT" -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
+! 					'h',
+! 					Scheduler::instance().clock(),
+! 					src_,
+! 					dst_,
+! 					name,
+! 					th->size(),
+! 					iph->flowid(),
+! 					th->uid(),
+! 					/*iph->flowid(),*/
+! 					colorindex,
+! 					src_nodeaddr,
+! 					src_portaddr,
+! 					dst_nodeaddr,
+! 					dst_portaddr,
+! 					-1, flags, sname);
+! 				namdump();
+! 				delete [] src_nodeaddr;
+! 				delete [] src_portaddr;
+! 				delete [] dst_nodeaddr;
+! 				delete [] dst_portaddr;
+! 			}
+! 		}
+! 			
+  	}
+  	/* hack: if trace object not attached to anything free packet */
+  	if (target_ == 0)

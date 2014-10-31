@@ -1,0 +1,22 @@
+**********************************************
+Files in mod/ dir should not be required for 
+installation if you are using ns-2.1b7a
+**********************************************
+
+This directory contains the modified NS files
+for which the patches are provided. The patch
+should work for ns-2.1b7a, however these files
+can be used to make the changes manually:
+
+Follow steps 1) and 2) from ../INSTALL. 
+instead of step 3) do the following:
+
+Take backups of files in ns-2.1b7a and ns-2.1b7a/tcl/lib
+directories with same names as files in mod/ dir. Then
+copy the modified files in the right directories:
+
+    % cp bluehoc/mod/*.cc bluehoc/mod/*.h .
+    % cp bluehoc/mod/*.tcl tcl/lib/
+
+Follow step 4) however in both cases the Note
+in ../INSTALL has to be followed. 

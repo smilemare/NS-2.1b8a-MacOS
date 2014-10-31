@@ -1,0 +1,22 @@
+*** ns-2.1b7a/tcl/lib/ns-lib.tcl	Thu Oct  5 04:16:42 2000
+--- ns-lib.tcl	Sun Feb 25 04:15:39 2001
+***************
+*** 133,136 ****
+--- 133,137 ----
+  source ns-hiernode.tcl
+  source ns-mobilenode.tcl
++ source ns-btnode.tcl
+  source ns-bsnode.tcl
+  source ns-link.tcl
+***************
+*** 170,178 ****
+  source ../rlm/rlm-ns.tcl
+  source ../session/session.tcl
+- source ../webcache/http-server.tcl
+- source ../webcache/http-cache.tcl
+- source ../webcache/http-agent.tcl
+- source ../webcache/http-mcache.tcl
+- source ../webcache/webtraf.tcl
+  source ns-namsupp.tcl
+  source ../mobility/dsdv.tcl
+--- 171,174 ----

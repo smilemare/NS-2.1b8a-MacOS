@@ -1,0 +1,11 @@
+This directory contains the Bluetooth modules. 
+The modules simulate the basic features of:
+
+1) Bluetooth baseband. 
+2) Link Manager Protocol (LMP). 
+3) Logical Link Adaptation and Control Protocol (L2CAP).
+
+For a description of these modules refer to 
+the website (oss.software.ibm.com/developerworks/opensource/bluehoc)
+
+

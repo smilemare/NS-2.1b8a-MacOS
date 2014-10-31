@@ -1,0 +1,19 @@
+*** ns-2.1b7a/god.cc	Thu Oct 19 01:40:23 2000
+--- god.cc	Sun Feb 25 04:15:39 2001
+***************
+*** 469,475 ****
+    }
+  
+!   vector a(mb_node[i]->X(), mb_node[i]->Y(), mb_node[i]->Z());
+!   vector b(mb_node[j]->X(), mb_node[j]->Y(), mb_node[j]->Z());
+!   vector d = a - b;
+  
+    if (d.length() < RANGE)
+--- 469,475 ----
+    }
+  
+!   vector_ns a(mb_node[i]->X(), mb_node[i]->Y(), mb_node[i]->Z());
+!   vector_ns b(mb_node[j]->X(), mb_node[j]->Y(), mb_node[j]->Z());
+!   vector_ns d = a - b;
+  
+    if (d.length() < RANGE)

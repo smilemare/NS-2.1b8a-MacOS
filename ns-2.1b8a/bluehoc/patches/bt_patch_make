@@ -1,0 +1,457 @@
+*** ns-2.1b7a/god.cc	Thu Oct 19 01:40:23 2000
+--- god.cc	Sun Feb 25 04:15:39 2001
+***************
+*** 469,475 ****
+    }
+  
+!   vector a(mb_node[i]->X(), mb_node[i]->Y(), mb_node[i]->Z());
+!   vector b(mb_node[j]->X(), mb_node[j]->Y(), mb_node[j]->Z());
+!   vector d = a - b;
+  
+    if (d.length() < RANGE)
+--- 469,475 ----
+    }
+  
+!   vector_ns a(mb_node[i]->X(), mb_node[i]->Y(), mb_node[i]->Z());
+!   vector_ns b(mb_node[j]->X(), mb_node[j]->Y(), mb_node[j]->Z());
+!   vector_ns d = a - b;
+  
+    if (d.length() < RANGE)
+*** ns-2.1b7a/god.h	Mon Jul 10 12:54:45 2000
+--- god.h	Sun Feb 25 04:15:39 2001
+***************
+*** 77,83 ****
+  // Cut and Paste from setdest.h   -- Chalermek 12/1/99
+  
+! class vector {
+  public:
+! 	vector(double x = 0.0, double y = 0.0, double z = 0.0) {
+  		X = x; Y = y; Z = z;
+  	}
+--- 77,83 ----
+  // Cut and Paste from setdest.h   -- Chalermek 12/1/99
+  
+! class vector_ns {
+  public:
+! 	vector_ns(double x = 0.0, double y = 0.0, double z = 0.0) {
+  		X = x; Y = y; Z = z;
+  	}
+***************
+*** 86,113 ****
+  	}
+  
+! 	inline void vector::operator=(const vector a) {
+  		X = a.X;
+  		Y = a.Y;
+  		Z = a.Z;
+  	}
+! 	inline void vector::operator+=(const vector a) {
+  		X += a.X;
+  		Y += a.Y;
+  		Z += a.Z;
+  	}
+! 	inline int vector::operator==(const vector a) {
+  		return (X == a.X && Y == a.Y && Z == a.Z);
+  	}
+! 	inline int vector::operator!=(const vector a) {
+  		return (X != a.X || Y != a.Y || Z != a.Z);
+  	}
+! 	inline vector operator-(const vector a) {
+! 		return vector(X-a.X, Y-a.Y, Z-a.Z);
+  	}
+! 	friend inline vector operator*(const double a, const vector b) {
+! 		return vector(a*b.X, a*b.Y, a*b.Z);
+  	}
+! 	friend inline vector operator/(const vector a, const double b) {
+! 		return vector(a.X/b, a.Y/b, a.Z/b);
+  	}
+  
+--- 86,113 ----
+  	}
+  
+! 	inline void vector_ns::operator=(const vector_ns a) {
+  		X = a.X;
+  		Y = a.Y;
+  		Z = a.Z;
+  	}
+! 	inline void vector_ns::operator+=(const vector_ns a) {
+  		X += a.X;
+  		Y += a.Y;
+  		Z += a.Z;
+  	}
+! 	inline int vector_ns::operator==(const vector_ns a) {
+  		return (X == a.X && Y == a.Y && Z == a.Z);
+  	}
+! 	inline int vector_ns::operator!=(const vector_ns a) {
+  		return (X != a.X || Y != a.Y || Z != a.Z);
+  	}
+! 	inline vector_ns operator-(const vector_ns a) {
+! 		return vector_ns(X-a.X, Y-a.Y, Z-a.Z);
+  	}
+! 	friend inline vector_ns operator*(const double a, const vector_ns b) {
+! 		return vector_ns(a*b.X, a*b.Y, a*b.Z);
+  	}
+! 	friend inline vector_ns operator/(const vector_ns a, const double b) {
+! 		return vector_ns(a.X/b, a.Y/b, a.Z/b);
+  	}
+  
+***************
+*** 117,120 ****
+--- 117,121 ----
+  };
+  
++ 
+  // ------------------------
+  
+***************
+*** 204,207 ****
+--- 205,209 ----
+                                //   the next hop of i where i wants to send
+                                //	 a packet to j.
++ 
+  };
+  
+*** ns-2.1b7a/tcl/lib/ns-default.tcl	Thu Oct 12 00:49:34 2000
+--- ns-default.tcl	Sun Feb 25 04:15:39 2001
+***************
+*** 708,713 ****
+  Agent/CBR set dport_            0
+  
+- # Http invalidation agent
+- Agent/HttpInval set inval_hdr_size_ 40
+  
+  Agent/RTP set seqno_ 0
+--- 708,711 ----
+*** ns-2.1b7a/tcl/lib/ns-lib.tcl	Thu Oct  5 04:16:42 2000
+--- ns-lib.tcl	Sun Feb 25 04:15:39 2001
+***************
+*** 133,136 ****
+--- 133,137 ----
+  source ns-hiernode.tcl
+  source ns-mobilenode.tcl
++ source ns-btnode.tcl
+  source ns-bsnode.tcl
+  source ns-link.tcl
+***************
+*** 170,178 ****
+  source ../rlm/rlm-ns.tcl
+  source ../session/session.tcl
+- source ../webcache/http-server.tcl
+- source ../webcache/http-cache.tcl
+- source ../webcache/http-agent.tcl
+- source ../webcache/http-mcache.tcl
+- source ../webcache/webtraf.tcl
+  source ns-namsupp.tcl
+  source ../mobility/dsdv.tcl
+--- 171,174 ----
+*** ns-2.1b7a/tcl/lib/ns-packet.tcl	Fri Sep  1 08:34:11 2000
+--- ns-packet.tcl	Sun Feb 25 04:15:39 2001
+***************
+*** 114,118 ****
+  	Encap
+  	Flags
+- 	HttpInval
+  	IMEP
+  	IP
+--- 114,117 ----
+***************
+*** 143,146 ****
+--- 142,147 ----
+  	TORA
+  	UMP 
++ 	BT
++ 	L2CAP
+  } {
+  	add-packet-header $prot
+*** ns-2.1b7a/packet.h	Fri Sep 29 01:49:06 2000
+--- packet.h	Sun Feb 25 04:15:39 2001
+***************
+*** 65,68 ****
+--- 65,70 ----
+  #define HDR_IMEP(p)     (hdr_imep::access(p))
+  #define HDR_DIFF(p)     (hdr_diff::access(p))
++ #define HDR_BT(p)	(hdr_bt::access(p))
++ #define HDR_L2CAP(p)	(hdr_l2cap::access(p))
+   
+  /* --------------------------------------------------------------------*/
+*** ns-2.1b7a/template.h	Sat Jun 27 06:55:07 1998
+--- template.h	Sun Feb 25 04:15:39 2001
+***************
+*** 90,100 ****
+  }
+  
+- template <class Type>
+- inline void swap(Type& a, Type& b)
+- {
+- 	Type t = a;
+- 	a = b;
+- 	b = t;
+- }
+- 
+  #endif
+--- 90,92 ----
+*** ns-2.1b7a/trace.cc	Sun Feb 25 22:28:03 2001
+--- ns-2.1b7a/trace.cc.mod	Sun Feb 25 22:27:47 2001
+***************
+*** 69,72 ****
+--- 69,74 ----
+  	bind("callback_", &callback_);
+  	bind("show_tcphdr_", &show_tcphdr_);
++ 	// added for Bluetooth trace
++ 	bind("namBTTrace_", &btTrace_);
+  }
+  
+***************
+*** 442,469 ****
+  		flags[5] = 0;
+  #endif
+! 		
+! 		sprintf(nwrk_, 
+! 			"%c -t "TIME_FORMAT" -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
+! 			'h',
+! 			Scheduler::instance().clock(),
+! 			src_,
+!   			dst_,
+! 			name,
+! 			th->size(),
+! 			iph->flowid(),
+! 			th->uid(),
+! 			iph->flowid(),
+! 			src_nodeaddr,
+! 			src_portaddr,
+! 			dst_nodeaddr,
+! 			dst_portaddr,
+! 			-1, flags, sname);
+! 		namdump();
+! 		delete [] src_nodeaddr;
+! 		delete [] src_portaddr;
+! 		delete [] dst_nodeaddr;
+! 		delete [] dst_portaddr;
+  	}
+- 
+  	/* hack: if trace object not attached to anything free packet */
+  	if (target_ == 0)
+--- 444,514 ----
+  		flags[5] = 0;
+  #endif
+! 		if (!btTrace_) {
+! 			sprintf(nwrk_, 
+! 				"%c -t "TIME_FORMAT" -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
+! 				'h',
+! 				Scheduler::instance().clock(),
+! 				src_,
+! 				dst_,
+! 				name,
+! 				th->size(),
+! 				iph->flowid(),
+! 				th->uid(),
+! 				iph->flowid(),
+! 				src_nodeaddr,
+! 				src_portaddr,
+! 				dst_nodeaddr,
+! 				dst_portaddr,
+! 				-1, flags, sname);
+! 			namdump();
+! 			delete [] src_nodeaddr;
+! 			delete [] src_portaddr;
+! 			delete [] dst_nodeaddr;
+! 			delete [] dst_portaddr;
+! 		}
+! 		else {
+! 			hdr_bt* bt = (struct hdr_bt*)(p)->access(hdr_bt::offset_);
+! 			unsigned char print = 0;
+! 			//string c = PacketColors[bt->type];
+! 			int colorindex = bt->type;
+! 			if (dst_ == 0 && !(bt->dir)) {
+! 				src_ = bt->sendId_;
+! 				print = 1;
+! 				//c = "red";
+! 			}
+! 			else if (dst_ && bt->dir) {
+! 				if (!(bt->am_addr) || bt->recvId_ == dst_) {
+! 					print = 1;
+! 					//c = "green";
+! 				}
+! 			}	
+! 			//const char* color = c.c_str();
+! 			if (print) {
+! 				sprintf(nwrk_, 
+! 					"%c -t "TIME_FORMAT" -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
+! 					'h',
+! 					Scheduler::instance().clock(),
+! 					src_,
+! 					dst_,
+! 					name,
+! 					th->size(),
+! 					iph->flowid(),
+! 					th->uid(),
+! 					/*iph->flowid(),*/
+! 					colorindex,
+! 					src_nodeaddr,
+! 					src_portaddr,
+! 					dst_nodeaddr,
+! 					dst_portaddr,
+! 					-1, flags, sname);
+! 				namdump();
+! 				delete [] src_nodeaddr;
+! 				delete [] src_portaddr;
+! 				delete [] dst_nodeaddr;
+! 				delete [] dst_portaddr;
+! 			}
+! 		}
+! 			
+  	}
+  	/* hack: if trace object not attached to anything free packet */
+  	if (target_ == 0)
+***************
+*** 471,473 ****
+--- 516,564 ----
+  	else
+  		send(p, h);
++ }
++ 
++ static class BTNodeTraceClass : public TclClass {
++ public:
++ 	BTNodeTraceClass() : TclClass("Trace/BTNodeColor") { }
++ 	TclObject* create(int , const char*const*) {
++ 		return (new BTNodeTrace());
++ 	}
++ } btnodetrace_class;
++ 
++ void
++ BTNodeTrace::recv(Packet* p, Handler* h)
++ {
++ 	target_->recv(p,h);
++ }
++ 
++ void
++ BTNodeTrace::changeNodeColor (state_type curr, state_type prev)
++ {
++ 	string s = StateName[curr];
++ 	string s1 = StateName[prev];
++ 	string c_new = ColorName[curr];
++ 	string c_old = ColorName[prev];
++ 	const char* name = s.c_str();
++ 	const char* name1 = s1.c_str();
++ 	const char* color_new = c_new.c_str();
++ 	const char* color_old = c_old.c_str();
++ 	sprintf(nwrk_, 
++ 		"%c -t "TIME_FORMAT" -s %d -S COLOR -c %s -o %s",
++ 		'n',
++ 		Scheduler::instance().clock(),
++ 		src_,
++ 		color_new,
++ 		color_old);
++ 	namdump();
++ 	sprintf(nwrk_, 
++ 		"%c -t "TIME_FORMAT" -s %d -S DLABEL -l %s -L %s",
++ 		'n',
++ 		Scheduler::instance().clock(),
++ 		src_,
++ 		name, name1);
++ 	namdump();
++ }
++ 
++ BTNodeTrace::~BTNodeTrace()
++ {
+  }
+*** ns-2.1b7a/trace.h	Sun Feb 25 22:28:13 2001
+--- ns-2.1b7a/trace.h.mod	Sun Feb 25 22:27:56 2001
+***************
+*** 43,46 ****
+--- 43,48 ----
+  #include "packet.h"
+  #include "connector.h"
++ #include "bt-core.h"
++ #include "globals.h"
+  
+  
+***************
+*** 59,62 ****
+--- 61,66 ----
+  	Tcl_Channel namChan_;
+  	char nwrk_ [256];
++ 	// added for Bluetooth trace
++ 	int btTrace_;
+  
+  public:
+***************
+*** 97,100 ****
+--- 101,111 ----
+  };
+  
++ class BTNodeTrace : public Trace {
++ public:
++ 	BTNodeTrace() : Trace(0) {}
++ 	~BTNodeTrace();
++ 	void recv(Packet* p, Handler* h);
++ 	void changeNodeColor(state_type, state_type);
++ };
+  
+  #endif
+*** ns-2.1b7a/Makefile.in	Sun Feb 25 05:20:17 2001
+--- ns-2.1b7a/Makefile.in.mod	Sun Feb 25 05:24:16 2001
+***************
+*** 97,100 ****
+--- 97,102 ----
+  
+  OBJ_CC = \
++ 	baseband.o bt-classify.o bt-drr.o bt-host.o \
++ 	bt-lc.o l2cap.o lbf.o lmp.o \
+  	random.o rng.o ranvar.o misc.o timer-handler.o \
+  	scheduler.o object.o \
+***************
+*** 131,137 ****
+  	$(LIB_DIR)int.Vec.o $(LIB_DIR)int.RVec.o \
+  	$(LIB_DIR)dmalloc_support.o \
+- 	webcache/http.o webcache/tcp-simple.o webcache/pagepool.o \
+- 	webcache/inval-agent.o webcache/tcpapp.o webcache/http-aux.o \
+- 	webcache/mcache.o webcache/webtraf.o \
+  	realaudio/realaudio.o \
+  	lanRouter.o filter.o pkt-counter.o \
+--- 133,136 ----
+***************
+*** 252,255 ****
+--- 251,255 ----
+  	tcl/lib/ns-link.tcl \
+  	tcl/lib/ns-mobilenode.tcl \
++ 	tcl/lib/ns-btnode.tcl \
+  	tcl/lib/ns-sat.tcl \
+  	tcl/lib/ns-cmutrace.tcl \
+***************
+*** 300,308 ****
+  	tcl/lan/ns-ll.tcl \
+  	tcl/lan/ns-mac.tcl \
+- 	tcl/webcache/http-agent.tcl \
+- 	tcl/webcache/http-server.tcl \
+- 	tcl/webcache/http-cache.tcl \
+- 	tcl/webcache/http-mcache.tcl \
+- 	tcl/webcache/webtraf.tcl \
+  	tcl/plm/plm.tcl \
+  	tcl/plm/plm-ns.tcl \
+--- 300,303 ----
+***************
+*** 346,367 ****
+  	$(RM) $(CLEANFILES) Makefile config.cache config.log config.status \
+  	    gnuc.h os-proto.h $(AUTOCONF_GEN)
+- 
+- tags:	force
+- 	ctags -wtd *.cc *.h webcache/*.cc webcache/*.h dsdv/*.cc dsdv/*.h \
+- 	dsr/*.cc dsr/*.h webcache/*.cc webcache/*.h lib/*.cc lib/*.h \
+- 	../Tcl/*.cc ../Tcl/*.h 
+- 
+- TAGS:	force
+- 	etags *.cc *.h webcache/*.cc webcache/*.h dsdv/*.cc dsdv/*.h \
+- 	dsr/*.cc dsr/*.h webcache/*.cc webcache/*.h lib/*.cc lib/*.h \
+- 	../Tcl/*.cc ../Tcl/*.h
+- 
+- tcl/lib/TAGS:	force
+- 	( \
+- 		cd tcl/lib; \
+- 		$(TCLSH) ../../bin/tcl-expand.tcl ns-lib.tcl | grep '^### tcl-expand.tcl: begin' | awk '{print $$5}' >.tcl_files; \
+- 		etags --lang=none -r '/^[ \t]*proc[ \t]+\([^ \t]+\)/\1/' `cat .tcl_files`; \
+- 		etags --append --lang=none -r '/^\([A-Z][^ \t]+\)[ \t]+\(instproc\|proc\)[ \t]+\([^ \t]+\)[ \t]+/\1::\3/' `cat .tcl_files`; \
+- 	)
+  
+  depend: $(SRC)
+--- 341,344 ----
